@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import StudentInfo from './StudentInfo'
+import StudentInfo from '../StudentInfo'
 
-export default function Page() {
+export default function Week2() {
   return (
-    <main>
-      <StudentInfo />
+    <div>
       <h1>My Shopping List</h1>
-    </main>
+      <StudentInfo />
+    </div>
   );
 }
