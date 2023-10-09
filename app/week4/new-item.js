@@ -1,4 +1,6 @@
 "use client";
+// marked as client-side so the page is rendered locally.
+
 // useState is a React hook that:
 // - is a built-in feature for adding and managing state to functional components.
 // - keeps track of form inputs and updates the state variables when they change.
@@ -22,7 +24,8 @@ export default function NewItem(props) {
     // Form submission handler.
     // Create a function to handle the submission of the form.
     function handleSubmit(e) {
-        // HALT IN THE NAME OF THE LAW!
+        // STOP RIGHT THERE CRIMINAL SCUM! Nobody breaks the law on my-
+        // - "there is some evidence that the phrase is used as an interruption-type meme."
         e.preventDefault();
     
         // Create a new item object using the state variables.
