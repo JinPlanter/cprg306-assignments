@@ -1,12 +1,16 @@
 "use client";
-// Import the useState hook from React.
-// - built-in feature for adding and managing state to functional components.
+// useState is a React hook that:
+// - is a built-in feature for adding and managing state to functional components.
+// - keeps track of form inputs and updates the state variables when they change.
 import React, { useState } from "react";
 
 export default function NewItem(props) {
     const { items = [], setItems } = props;
 
-    // Initializing variables:
+
+    // The initialized variables [name, quantity, category] within the useState function are immutable and can only be changed
+    // by using the setName, setQuantity, and setCategory functions.
+
     // Name field.
     const [name, setName] = useState("");
     // Quantity field. Default value 1.
@@ -25,6 +29,7 @@ export default function NewItem(props) {
         // Destructuring the object into distinct state variables.
         const newItem = {
         id: items ? items.length + 1 : 1,
+        // if items exists(!null), then items.length + 1, else 1
         name,
         quantity,
         category
@@ -34,12 +39,12 @@ export default function NewItem(props) {
         console.log(newItem);
 
         // Displays an alert with the current state values.
-        alert(`New item: ${name}, ${quantity}, ${category}`);
+        alert(`You've added: ${quantity} ${name}, from the ${category} aisle to your cart!`);
     
         // Update the items state variable using the setItems function.
-        // setItems([...items, newItem]);
+        //setItems([items, newItem]);
     
-        // Reset the state variables to clear the inputs.
+        // Function that resets the state variables to clear the inputs.
         setName("");
         setQuantity(1);
         setCategory("Produce");
@@ -49,17 +54,19 @@ export default function NewItem(props) {
         <div>
             <h2>New Item</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name: </label>
+                <label htmlForm="name">Name: </label>
                 <input
                 id="name"
                 type="text"
                 value={name}
-                // onChange={handleNameChange}
                 onChange={e => setName(e.target.value)}
+                // onChange prop:
+                // - "e" (event object) is passed into the function via an arrow function.
+                // - Triggers whenever the user submits a new name.
                 style={{ color: "#000000" }}
                 />
 
-                <label htmlFor="quantity">Quantity: </label>
+                <label htmlForm="quantity">Quantity: </label>
                 <input
                 id="quantity"
                 type="number"
@@ -70,7 +77,7 @@ export default function NewItem(props) {
                 style={{ color: "#000000" }}
                 />
 
-                <label htmlFor="category">Category: </label>
+                <label htmlForm="category">Category: </label>
                 <select
                 id="category"
                 value={category}
