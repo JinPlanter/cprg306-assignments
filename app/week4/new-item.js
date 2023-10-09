@@ -64,6 +64,8 @@ export default function NewItem(props) {
                 id="quantity"
                 type="number"
                 value={quantity}
+                min="1"
+                max="99"
                 onChange={e => setQuantity(e.target.value)}
                 style={{ color: "#000000" }}
                 />
