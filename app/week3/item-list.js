@@ -1,6 +1,5 @@
 import Item from "./item";
 
-
 export default function ItemList(){
   const item1 = {
     name: "milk, 4 L 🥛",
@@ -76,8 +75,8 @@ export default function ItemList(){
 
   return(
     <>
-      <br></br>
       <h1 className="text-lg font-bold">My Shopping List:</h1>
+      <br></br>
       <Item
         name={item1.name}
         quantity={item1.quantity}

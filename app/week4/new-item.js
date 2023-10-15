@@ -23,10 +23,12 @@ export default function NewItem(props) {
 
     // Form submission handler.
     // Create a function to handle the submission of the form.
-    function handleSubmit(e) {
+    // Arrow function that takes in an event object.
+    const handleSubmit = (eventObject) => {
         // STOP RIGHT THERE CRIMINAL SCUM! Nobody breaks the law on my-
         // - "there is some evidence that the phrase is used as an interruption-type meme."
-        e.preventDefault();
+        eventObject.preventDefault();
+        // Prevents the default action of the form submission.
     
         // Create a new item object using the state variables.
         // Destructuring the object into distinct state variables.

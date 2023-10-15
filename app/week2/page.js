@@ -1,9 +1,9 @@
 import StudentInfo from '../StudentInfo'
 
-export default function Week2(){
+export default function Page(){
   return(
-    <div>
+    <main>
       <StudentInfo />
-    </div>
+    </main>
   );
 }
