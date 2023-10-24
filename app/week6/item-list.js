@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Item from './item'; // Import the Item component
+import Item from './item';
 
 
 /*
@@ -11,11 +11,10 @@ Instead, these functions should create a copy of items, perform any necessary op
 
 
 // Define the ItemList component
-function ItemList() {
+function ItemList({ items }) { // Destructure items from props object
   // State variables
   const [sortBy, setSortBy] = useState("name"); // Sorting preference
   const [groupBy, setGroupBy] = useState(false); // Grouping toggle
-  const [items, setItems] = useState(itemsData.items); // Items
 
   // Sort items based on sorting preference
   const sortedItems = [...items].sort((a, b) => {

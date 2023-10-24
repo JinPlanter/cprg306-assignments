@@ -4,16 +4,9 @@
 // useState is a React hook that:
 // - is a built-in feature for adding and managing state to functional components.
 // - keeps track of form inputs and updates the state variables when they change.
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function NewItem(props) {
-    const { items = [], setItems } = props;
-
-    // add new prop called onAddItem
-    const { onAddItem } = props;
-    
-
-
+export default function NewItem({onAddItem}) {
 
     // The initialized variables [name, quantity, category] within the useState function are immutable and can only be changed
     // by using the setName, setQuantity, and setCategory functions.
@@ -24,6 +17,7 @@ export default function NewItem(props) {
     const [quantity, setQuantity] = useState(1);
     // Category field. Default value Produce.
     const [category, setCategory] = useState("Produce");
+    const id = Math.random();
 
 
     // Form submission handler.
@@ -35,8 +29,12 @@ export default function NewItem(props) {
         eventObject.preventDefault();
         // Prevents the default action of the form submission.
     
+
+
         // Create a new item object using the state variables.
         // Destructuring the object into distinct state variables.
+        let item = { id, name, quantity, category };
+        /*
         const newItem = {
         id: items ? items.length + 1 : 1,
         // if items exists(!null), then items.length + 1, else 1
@@ -44,15 +42,19 @@ export default function NewItem(props) {
         quantity,
         category
         };
+        */
+        
+        
 
         // Logs newItem object to the console when the form is submitted.
-        console.log(newItem);
+        console.log(NewItem);
 
         // Displays an alert with the current state values.
         // alert(`You've added: ${quantity} ${name}, from the ${category} aisle to your cart!`);
 
         // Replace the alert functionality by calling the onAddItem prop with the item object when the form is submitted. 
-        onAddItem(newItem);
+        // onAddItem is a prop that passes 'newItem'
+        onAddItem(item);
         
     
         // Update the items state variable using the setItems function.
@@ -74,6 +76,9 @@ export default function NewItem(props) {
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
+
+                // Require the user to enter an item name.
+                required
                 // onChange prop:
                 // - "e" (event object) is passed into the function via an arrow function.
                 // - Triggers whenever the user submits a new name.
@@ -88,6 +93,9 @@ export default function NewItem(props) {
                 min="1"
                 max="99"
                 onChange={e => setQuantity(e.target.value)}
+
+                // Require the user to enter a quantity as the user could accidentally leave it as a blank field.
+                required
                 style={{ color: "#000000" }}
                 />
 

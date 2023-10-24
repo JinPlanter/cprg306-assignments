@@ -7,7 +7,7 @@
 import React, { useState } from "react";
 
 export default function NewItem(props) {
-    const { items = [], setItems } = props;
+    const { items = [], onAddItem } = props;
 
 
     // The initialized variables [name, quantity, category] within the useState function are immutable and can only be changed
@@ -39,6 +39,7 @@ export default function NewItem(props) {
         quantity,
         category
         };
+        onAddItem(newItem);
 
         // Logs newItem object to the console when the form is submitted.
         console.log(newItem);
