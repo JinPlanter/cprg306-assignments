@@ -1,15 +1,21 @@
 "use client";
-// Import necessary modules and components
+
 import { useState } from "react";
-import Link from 'next/link';
 import Item from './item'; // Import the Item component
-import items from './items.json'; // Import the JSON data containing items
+
+
+/*
+Replace all functions that mutate the items prop with versions that do not mutate the prop.
+Instead, these functions should create a copy of items, perform any necessary operations on the copy, and use this copy for rendering.
+*/
+
 
 // Define the ItemList component
 function ItemList() {
   // State variables
   const [sortBy, setSortBy] = useState("name"); // Sorting preference
   const [groupBy, setGroupBy] = useState(false); // Grouping toggle
+  const [items, setItems] = useState(itemsData.items); // Items
 
   // Sort items based on sorting preference
   const sortedItems = [...items].sort((a, b) => {

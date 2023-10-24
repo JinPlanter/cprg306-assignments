@@ -1,7 +1,6 @@
 "use client";
-// Import necessary modules and components
+
 import { useState } from "react";
-import Link from 'next/link';
 import Item from './item'; // Import the Item component
 import items from './items.json'; // Import the JSON data containing items
 
