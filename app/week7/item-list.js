@@ -11,7 +11,7 @@ Instead, these functions should create a copy of items, perform any necessary op
 
 
 // Define the ItemList component
-function ItemList({ items }) { // Destructure items from props object
+function ItemList({ items, onItemSelect }) { // Destructure items from props object
   // State variables
   const [sortBy, setSortBy] = useState("name"); // Sorting preference
   const [groupBy, setGroupBy] = useState(false); // Grouping toggle
@@ -86,14 +86,16 @@ function ItemList({ items }) { // Destructure items from props object
                 <h2 className="capitalize text-2xl mt-4">{category}</h2>
                 {/* Render items within the current category */}
                 {groupedItems[category].map((item) => (
+                  
                   // Render the Item component for the current item
-                  <Item key={item.id} item={item} />
+                  // By passing the onSelect prop to each Item component, all Item components now triggers the onItemSelect function when clicked.
+                  <Item key={item.id} item={item} onSelect={() => onItemSelect(item)}/>
                 ))}
               </div>
             ))
           : sortedItems.map((item) => (
               // Render the Item component for each item when not grouping
-              <Item key={item.id} item={item} />
+              <Item key={item.id} item={item} onSelect={() => onItemSelect(item)}/>
             ))}
       </div>
     </div>

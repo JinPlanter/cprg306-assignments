@@ -70,7 +70,7 @@ export default function NewItem({onAddItem}) {
         <div>
             <h2>New Item</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlForm="name">Name: </label>
+                <label htmlform="name">Name: </label>
                 <input
                 id="name"
                 type="text"
@@ -85,7 +85,7 @@ export default function NewItem({onAddItem}) {
                 style={{ color: "#000000" }}
                 />
 
-                <label htmlForm="quantity">Quantity: </label>
+                <label htmlform="quantity">Quantity: </label>
                 <input
                 id="quantity"
                 type="number"
@@ -99,7 +99,7 @@ export default function NewItem({onAddItem}) {
                 style={{ color: "#000000" }}
                 />
 
-                <label htmlForm="category">Category: </label>
+                <label htmlform="category">Category: </label>
                 <select
                 id="category"
                 value={category}

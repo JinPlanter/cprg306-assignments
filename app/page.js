@@ -31,10 +31,16 @@ export default function Page(){
           <Link href="/week6">Week 6</Link>
         </li>
         <li>
+          <Link href="/week7">Week 7</Link>
+        </li>
+        <li>
           <Link href="/weekdemo6">Week 6 Demo</Link>
         </li>
         <li>
           <Link href="/weekdemo7">Week 7 Demo</Link>
+        </li>
+        <li>
+          <Link href="/externaldemotest">External Demo Test</Link>
         </li>
       </ul>
     </main>
