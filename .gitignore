@@ -35,6 +35,6 @@ yarn-error.log*
 next-env.d.ts
 
 # custom folders
-/weekdemo6
-/weekdemo7
-/externaldemotest
+./weekdemo6
+./weekdemo7
+./externaldemotest
