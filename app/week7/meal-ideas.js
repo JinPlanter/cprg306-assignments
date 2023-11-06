@@ -15,9 +15,11 @@ async function fetchMealIdeas(ingredient) {
         const data = await response.json();
         // pulls data from the response object and returns it as a JSON object.
 
+        return data;
         
+        /*
         try {
-            // the api returns null if there are no meals found.
+            // pasting the API with the leading "${ingredient}" returns meals: null.
             if (data.meals !== null) {
                 return data.meals;;
             }
@@ -28,6 +30,7 @@ async function fetchMealIdeas(ingredient) {
         catch (error) {
             console.error(error);
         }
+        */
 
         /*
         if (data.meals === null) {
@@ -59,7 +62,11 @@ export default function MealIdeas({ ingredient }) {
     
     // Define load function
     async function loadMealIdeas() {
-        fetchMealIdeas(ingredient).then((meals) => setMeals(meals));
+        // fetchMealIdeas(ingredient).then((meals) => setMeals(meals));
+        const data = await fetchMealIdeas(ingredient);
+        setMeals(data.meals);
+
+        console.log(ingredient);
     }
     
     // Use the useEffect hook
@@ -74,7 +81,7 @@ export default function MealIdeas({ ingredient }) {
         <div>
         <h2>Meal Ideas</h2>
         <ul>
-            {meals.map((meal) => (
+            {meals && meals.map((meal) => (
             <li key={meal.idMeal}>{meal.strMeal}</li>
             ))}
         </ul>
