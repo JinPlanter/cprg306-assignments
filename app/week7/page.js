@@ -36,29 +36,34 @@ export default function Page() {
   }
 
   return (
-    
     <main className="bg-gray-900 text-white p-8">
       <h1 className="text-4xl mb-8 text-center">Shopping List</h1>
 
-      <div className="flex">
-        {/* Page title */}
-        
-        {/*
-        NewItem component is:
-        1. Rendered.
-        2. Passed the handleAddItem function as a prop called onAddItem.
-        */}
-        <NewItem onAddItem={handleAddItem} />
-        <br></br>
-        {/*
-        ItemList component is:
-        1. Rendered.
-        2. Passed the 'items' state variable as a prop called items.
-        */}
-        <ItemList items={items} onItemSelect={handleItemSelect} />
+      <div className="flex flex-col">
+        <div className="flex-item">
+          {/*
+          NewItem component is:
+          1. Rendered.
+          2. Passed the handleAddItem function as a prop called onAddItem.
+          */}
+          <NewItem onAddItem={handleAddItem} />
+        </div>
 
-        {/* MealIdeas component is: */}
-        <MealIdeas ingredient={selectedItemName} />
+        <div className="flex flex-row">
+          <div className="flex-item">
+            {/*
+            ItemList component is:
+            1. Rendered.
+            2. Passed the 'items' state variable as a prop called items.
+            */}
+            <ItemList items={items} onItemSelect={handleItemSelect} />
+          </div>
+
+          <div className="flex-item">
+             {/* MealIdeas component is: */}
+            <MealIdeas ingredient={selectedItemName} />
+          </div>
+        </div>
       </div>
     </main>
   );

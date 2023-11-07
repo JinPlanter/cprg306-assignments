@@ -42,6 +42,9 @@ export default function Page(){
         <li>
           <Link href="/externaldemotest">External Demo Test</Link>
         </li>
+        <li>
+          <Link href="/week8">Week 8</Link>
+        </li>
       </ul>
     </main>
   );

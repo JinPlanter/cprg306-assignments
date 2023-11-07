@@ -9,10 +9,10 @@ export default function Item({ item, onSelect }) {
   return (
     <div>
       <ol>
-        <li className="text-red-300 bg-slate-800 border border-blue-800" onClick={() => onSelect(item)}>
+        <li className="text-green-300 bg-slate-800 border border-red-950 p-2 m-2 rounded" onClick={() => onSelect(item)}>
 
           {/* Display the item's name */}
-          <p className="text-red-800">Name: {name}</p>
+          <p>Name: {name}</p>
 
           {/* Display the item's quantity */}
           <p>Quantity: {quantity}</p>

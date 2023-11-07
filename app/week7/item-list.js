@@ -43,7 +43,7 @@ function ItemList({ items, onItemSelect }) { // Destructure items from props obj
 
   // Render the component
   return (
-    <div className="bg-gray-900 text-white p-4">
+    <div className="bg-gray-900 text-black p-4">
       <div className="flex justify-between items-center">
         {/* Sorting and grouping buttons */}
         <button
@@ -52,7 +52,7 @@ function ItemList({ items, onItemSelect }) { // Destructure items from props obj
             setGroupBy(false); // Disable grouping when sorting by name
           }}
           className={`py-2 px-4 rounded ${
-            sortBy === "name" ? "bg-blue-500 text-white" : "bg-white text-black"
+            sortBy === "name" ? "bg-blue-500 text-black" : "bg-white text-black"
           }`}
         >
           Sort by Name
@@ -63,7 +63,7 @@ function ItemList({ items, onItemSelect }) { // Destructure items from props obj
             setGroupBy(false); // Disable grouping when sorting by category
           }}
           className={`py-2 px-4 rounded ${
-            sortBy === "category" ? "bg-blue-500 text-white" : "bg-white text-black"
+            sortBy === "category" ? "bg-blue-500 text-black" : "bg-white text-black"
           }`}
         >
           Sort by Category
@@ -71,7 +71,7 @@ function ItemList({ items, onItemSelect }) { // Destructure items from props obj
         <button
           onClick={() => setGroupBy(!groupBy)}
           className={`py-2 px-4 rounded ${
-            groupBy ? "bg-blue-500 text-white" : "bg-white text-black"
+            groupBy ? "bg-blue-500 text-black" : "bg-white text-black"
           }`}
         >
           Group by Category
