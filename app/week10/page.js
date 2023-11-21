@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 // import from utils folder
 import { useUserAuth } from "./_utils/auth-context";
 // "useUserAuth" is a custom hook that consumes the AuthContext
-
-import Link from "next/link";
 
 /**
  * Renders a page with authentication demo.
@@ -27,15 +27,6 @@ export default function Page() {
     };
 
     return (
-        /*
-        <div>
-            <p>
-                Welcome, {user.displayName} ({user.email})
-            </p>
-            <button onClick={handleSignIn}>Sign In</button>
-            <button onClick={handleSignOut}>Sign Out</button>
-        </div>
-        */
         <div>
             <h1>Authentication Demo</h1>
             {!user && (
@@ -47,8 +38,9 @@ export default function Page() {
                         Welcome, <strong>{user.displayName} ({user.email}</strong> )
                     </p>
                     <button onClick={handleSignOut}>Sign Out</button>
+
                     <br />
-                    <Link href="/week8/shopping-list">Shopping List</Link>
+                    <Link href="/week10/shopping-list">Shopping List</Link>
                 </div>
             )}
         </div>

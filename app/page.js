@@ -45,6 +45,12 @@ export default function Page(){
         <li>
           <Link href="/week8">Week 8</Link>
         </li>
+        <li>
+          <Link href="/week10">Week 10</Link>
+        </li>
+        <li>
+          <Link href="/ProjectPhase3">Project Phase 3</Link>
+        </li>
       </ul>
     </main>
   );
