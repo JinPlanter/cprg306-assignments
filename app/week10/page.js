@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-
-// import from utils folder
 import { useUserAuth } from "./_utils/auth-context";
 // "useUserAuth" is a custom hook that consumes the AuthContext
+
+import ShoppingList from "./shopping-list/page";
 
 /**
  * Renders a page with authentication demo.

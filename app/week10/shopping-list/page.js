@@ -12,7 +12,7 @@ export default function Page() {
   // constant [stateVariable(immutable), setStateVariable(updates state of stateVariable)] = useStateHook(stateVariable_InitialValue)
   // useState is a hook+function that defines and updates the state variable.
   // updating the state variable will cause React to auto-re-render the component.
-  const [items, setItems] = useState(itemsData);
+  const [items, setItems] = useState([]); 
   const [selectedItemName, setSelectedItemName] = useState(null);
   const {user, firebaseSignOut} = useUserAuth();
 
@@ -21,9 +21,10 @@ export default function Page() {
 
 
     if(user && user.id){
-      addItem(user.id, item).then((newItems) => {
+      addItem(user.id, item).then((id) => {
         // add a new item to the `items` state variable
-        setItems([...items, {id: newItems, ...item}]);
+        item.id = id;
+        setItems([...items, item]);
         // `...` is the spread operator that creates a new array with the existing items and the new item.
       });
     }
@@ -72,8 +73,8 @@ export default function Page() {
   }
 
   useEffect(() => {
-    loadItems(user.uid);
-  }, [user.uid]);
+    loadItems();
+  }, [user?.uid]);
 
   return (
     <main className="bg-gray-900 text-white p-8">
