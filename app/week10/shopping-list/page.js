@@ -18,8 +18,7 @@ export default function Page() {
 
   // Pass the handleAddItem event handler to the NewItem component as a prop called onAddItem.
   function handleAddItem(item) {
-
-
+    /*
     if(user && user.id){
       addItem(user.id, item).then((id) => {
         // add a new item to the `items` state variable
@@ -28,6 +27,14 @@ export default function Page() {
         // `...` is the spread operator that creates a new array with the existing items and the new item.
       });
     }
+    */
+
+    addItem(user.uid, item).then((newItemId) => {
+      // add a new item to the `items` state variable
+      setItems([...items, {id: newItemId, ...item}]);
+      // `...` is the spread operator that creates a new array with the existing items and the new item.
+    });
+    
   }
 
 
@@ -67,10 +74,14 @@ export default function Page() {
     }
   }
 
+
+  /*
   async function addItem(item) {
     const newItems = await addItem(user.uid, item);
     setItems(newItems);
   }
+  */
+  
 
   useEffect(() => {
     loadItems();
